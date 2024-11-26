@@ -5,6 +5,7 @@ import com.example.jetbrainstest.pages.WriterSidePage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WriterSideTest extends BaseTest {
@@ -17,18 +18,24 @@ public class WriterSideTest extends BaseTest {
         super.setUp();
         getDriver().get("https://www.jetbrains.com/writerside/");
         writerSidePage = new WriterSidePage(getDriver());
-        writerSidePage.acceptCookies(); // Accept cookies before proceeding with tests
+        writerSidePage.acceptCookies();
     }
 
     @Test
-    @DisplayName("Check if Download button is active")
+    @DisplayName("Check Download button is active")
     public void testDownloadButtonIsActive() {
-        assertTrue(writerSidePage.isDownloadButtonEnabled(), "Download button is not active");
+        assertTrue(
+                writerSidePage.isDownloadButtonEnabled(),
+                "Download button is not active"
+        );
     }
 
     @Test
     @DisplayName("Check if Pricing button is enabled")
     public void testPricingButtonIsEnabled() {
-        assertTrue(writerSidePage.isPricingButtonEnabled(), "Pricing button is not active");
+        assertTrue(
+                writerSidePage.isPricingButtonEnabled(),
+                "Pricing button is not active"
+        );
     }
 }

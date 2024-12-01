@@ -1,6 +1,7 @@
 package com.example.jetbrainstest.pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,10 +30,10 @@ public class WriterSidePage {
 
     @Step("Accept Cookies if the button is available")
     public void acceptCookies() {
-        if (acceptCookieButton.isDisplayed() && acceptCookieButton.isEnabled()) {
+        try {
             acceptCookieButton.click();
             LOG.info("Cookies accepted");
-        } else {
+        } catch (NoSuchElementException e) {
             LOG.info("Accept Cookies button is not available or already handled");
         }
     }

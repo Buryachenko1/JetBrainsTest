@@ -1,6 +1,5 @@
 package com.example.jetbrainstest.tests;
 
-import com.example.jetbrainstest.pages.WebStormPage;
 import com.example.jetbrainstest.pages.WriterSidePage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

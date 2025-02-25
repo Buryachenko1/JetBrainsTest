@@ -37,13 +37,14 @@ public class WriterSidePage {
             LOG.info("Accept Cookies button is not available or already handled");
         }
     }
-
-    public Boolean isDownloadButtonEnabled() {
+    @Step("Check if the Download button is enabled")
+    public boolean isDownloadButtonEnabled() {
         LOG.info("Checking if the Download button is active");
         return downloadButton.isEnabled();
     }
-
-    public Boolean isPricingButtonEnabled() {
-        return pricingButton.isEnabled();
-    }
+    @Step("Check if the Pricing button is enabled")
+    public boolean isPricingButtonEnabled() {
+            LOG.info("Checking if the Pricing button is active");
+            return pricingButton.isEnabled();
+        }
 }
